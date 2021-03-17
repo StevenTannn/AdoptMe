@@ -12,30 +12,28 @@ const App = () => {
   const theme = useState("");
   return (
     <ThemeContext.Provider value={theme}>
-    <div>
-      <header>
+      <div>
         <Router>
-          <Link to="/">
-            <h1>Adopt Me!</h1>
-          </Link>
+          <header>
+            <Link to="/">
+              <h1>Adopt Me!</h1>
+            </Link>
+          </header>
+          <Switch>
+            <Route path="/details/:id">
+              <Detail />
+            </Route>
+            <Route path="/">
+              <SearchParams />
+            </Route>
+          </Switch>
         </Router>
-      </header>
-      <Router>
-        <Switch>
-          <Route path="/details/:id">
-            <Detail />
-          </Route>
-          <Route path="/">
-            <SearchParams />
-          </Route>
-        </Switch>
-      </Router>
       </div>
     </ThemeContext.Provider>
-      // {/* <Pet name="Luna" animal="Dog" breed="Havanase" />
-      // <Pet name="Pepper" animal="Bird" breed="Cookatiel" />
-      // <Pet name="Doink" animal="Cat" breed="Mix" /> */}
-  )
+    // {/* <Pet name="Luna" animal="Dog" breed="Havanase" />
+    // <Pet name="Pepper" animal="Bird" breed="Cookatiel" />
+    // <Pet name="Doink" animal="Cat" breed="Mix" /> */}
+  );
 };
 
 // const App = () => {
